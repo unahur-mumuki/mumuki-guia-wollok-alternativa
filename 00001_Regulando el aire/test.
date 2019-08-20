@@ -1,0 +1,4 @@
+test "estado enfriando" {
+  regulador.temperaturaCambia(38)
+  assert.equals("enfriando", regulador.estado())
+}
