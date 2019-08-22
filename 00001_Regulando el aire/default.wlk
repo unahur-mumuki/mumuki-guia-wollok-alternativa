@@ -1,6 +1,10 @@
 object regulador {
   var temperatura = 32
 
+  method temperatura() {
+    return temperatura
+  }
+  
   method temperaturaCambia(nuevoValor) {
     temperatura = nuevoValor
   }

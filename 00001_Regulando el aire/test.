@@ -1,4 +1,4 @@
-test "estado si hace mucho calor" {
+testest "estado si hace mucho calor" {
   regulador.temperaturaCambia(38)
   assert.equals("enfriando", regulador.estado())
 }
@@ -22,3 +22,16 @@ test "potencia necesaria si está fresquito" {
   regulador.temperaturaCambia(18)
   assert.equals(0, regulador.potenciaNecesaria())
 }
+
+test "se abre una ventana con mucho calor" {
+  regulador.temperaturaCambia(38)
+  regulador.seAbreUnaVentana()
+  assert(40, regulador.temperatura())
+}
+
+test "se abre una ventana estando fresquito" {
+  regulador.temperaturaCambia(18)
+  regulador.seAbreUnaVentana()
+  assert(21, regulador.temperatura())
+}
+
