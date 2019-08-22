@@ -1,4 +1,24 @@
-test "estado enfriando" {
+test "estado si hace mucho calor" {
   regulador.temperaturaCambia(38)
   assert.equals("enfriando", regulador.estado())
+}
+
+test "estado con temperatura tranca" {
+  regulador.temperaturaCambia(22)
+  assert.equals("en alerta", regulador.estado())
+}
+
+test "potencia necesaria con mucho calor" {
+  regulador.temperaturaCambia(38)
+  assert.equals(500, regulador.potenciaNecesaria())
+}
+
+test "potencia necesaria con calor intermedio" {
+  regulador.temperaturaCambia(28)
+  assert.equals(200, regulador.potenciaNecesaria())
+}
+
+test "potencia necesaria si está fresquito" {
+  regulador.temperaturaCambia(18)
+  assert.equals(0, regulador.potenciaNecesaria())
 }

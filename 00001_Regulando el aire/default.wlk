@@ -5,5 +5,13 @@ object regulador {
     temperatura = nuevoValor
   }
   
+  method subirTemperatura(cuanto) {
+    temperatura += cuanto
+  }
+
+  method bajarTemperatura(cuanto) {
+    temperatura -= cuanto
+  }
+  
 }
 
