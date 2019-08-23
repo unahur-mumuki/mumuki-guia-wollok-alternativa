@@ -1,0 +1,5 @@
+test "sacudon con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  tanqueDeAgua.recibirSacudon()
+  assert.equal(197, tanqueDeAgua.nivelDeCarga())
+}
