@@ -26,12 +26,12 @@ test "potencia necesaria si está fresquito" {
 test "se abre una ventana con mucho calor" {
   regulador.temperaturaCambia(38)
   regulador.seAbreUnaVentana()
-  assert(40, regulador.temperatura())
+  assert.equals(40, regulador.temperatura())
 }
 
 test "se abre una ventana estando fresquito" {
   regulador.temperaturaCambia(18)
   regulador.seAbreUnaVentana()
-  assert(21, regulador.temperatura())
+  assert.equals(21, regulador.temperatura())
 }
 
