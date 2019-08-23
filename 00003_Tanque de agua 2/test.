@@ -1,3 +1,47 @@
-test "pepu" {
-  assert.equals(5, 2+3)
+test "mucho calor con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  tanqueDeAgua.sufrirCalor(40)
+  assert.equals(195, tanqueDeAgua.nivelDeCarga())
+}
+
+test "mucho calor con tanque medio vacío" {
+  tanqueDeAgua.cargarAgua(60)
+  tanqueDeAgua.sufrirCalor(40)
+  assert.equals(60, tanqueDeAgua.nivelDeCarga())
+}
+
+test "bastante calor con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  tanqueDeAgua.sufrirCalor(30)
+  assert.equals(198, tanqueDeAgua.nivelDeCarga())
+}
+
+test "bastante calor con tanque medio vacío" {
+  tanqueDeAgua.cargarAgua(60)
+  tanqueDeAgua.sufrirCalor(30)
+  assert.equals(60, tanqueDeAgua.nivelDeCarga())
+}
+
+test "poco calor con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  tanqueDeAgua.sufrirCalor(20)
+  assert.equals(200, tanqueDeAgua.nivelDeCarga())
+}
+
+test "poco calor con tanque medio vacío" {
+  tanqueDeAgua.cargarAgua(60)
+  tanqueDeAgua.sufrirCalor(20)
+  assert.equals(60, tanqueDeAgua.nivelDeCarga())
+}
+
+test "mucha lluvia" {
+  tanqueDeAgua.cargarAgua(120)
+  tanqueDeAgua.sufrirLluvia(20)
+  assert.equals(128, tanqueDeAgua.nivelDeCarga())
+}
+
+test "poca lluvia" {
+  tanqueDeAgua.cargarAgua(120)
+  tanqueDeAgua.sufrirLluvia(4)
+  assert.equals(122, tanqueDeAgua.nivelDeCarga())
 }

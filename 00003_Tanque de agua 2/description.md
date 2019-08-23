@@ -1,4 +1,4 @@
-El modelo es el mismo del ejercicio anterior. Nos piden agregar dos nuevos métodos.
+El modelo es el mismo del ejercicio anterior. Nos piden agregar dos nuevos métodos al `tanqueDeAgua`.
 
 <br/>
 
