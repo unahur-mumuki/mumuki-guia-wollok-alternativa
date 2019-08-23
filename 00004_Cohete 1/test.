@@ -1,0 +1,44 @@
+test "pierde impulso yendo rápido hacia el oeste" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(2000)
+  cohete.perderImpulso()
+  assert.equals(1800, cohete.velocidad())
+}
+
+test "pierde impulso yendo rápido hacia el eeste" {
+  cohete.irHacia(este)
+  cohete.cambiarVelocidad(2000)
+  cohete.perderImpulso()
+  assert.equals(1800, cohete.velocidad())
+}
+
+test "pierde impulso yendo despacio" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(400)
+  cohete.perderImpulso()
+  assert.equals(250, cohete.velocidad())
+}
+
+test "girar si puede yendo rápido" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(2000)
+  cohete.girarSiPuede()
+  assert.equals(2000, cohete.velocidad())
+  assert.equals(oeste, cohete.direccion())
+}
+
+test "girar si puede yendo despacio hacia el oeste" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(400)
+  cohete.girarSiPuede()
+  assert.equals(400, cohete.velocidad())
+  assert.equals(este, cohete.direccion())
+}
+
+test "girar si puede yendo despacio hacia el este" {
+  cohete.irHacia(este)
+  cohete.cambiarVelocidad(340)
+  cohete.girarSiPuede()
+  assert.equals(340, cohete.velocidad())
+  assert.equals(oeste, cohete.direccion())
+}

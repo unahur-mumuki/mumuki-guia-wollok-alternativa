@@ -1,5 +1,0 @@
-test "zonda yendo rápido hacia el oeste" {
-  cohete.irHacia(oeste)
-  cohete.cambiarVelocidad(800)
-  assert.equals(1100, cohete.ve)
-}

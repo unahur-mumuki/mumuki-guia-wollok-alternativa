@@ -18,6 +18,7 @@ object cohete {
     velocidad = nuevaVelocidad
   }
   method velocidad() { return velocidad }
+  method direccion() { return direccion }
   method estaAvanzandoHaciaElEste() { 
     return (direccion == este) and velocidad > 500 
   }
