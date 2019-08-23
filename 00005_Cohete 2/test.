@@ -1,0 +1,18 @@
+test "velocidad corregida yendo al este" {
+  cohete.irHacia(este)
+  cohete.cambiarVelocidad(800)
+  assert.equals(1600, cohete.velocidadCorregidaAlEste())
+}
+
+test "velocidad corregida yendo al oeste" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(800)
+  assert.equals(400, cohete.velocidadCorregidaAlEste())
+}
+
+test "zonda yendo rápido hacia el oeste" {
+  cohete.irHacia(oeste)
+  cohete.cambiarVelocidad(1800)
+  cohete.sufrirVientoZonda()
+  assert.equals(2100, cohete.velocidad())
+}
