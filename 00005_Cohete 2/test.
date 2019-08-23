@@ -14,6 +14,7 @@ test "zonda yendo rápido hacia el oeste" {
   cohete.irHacia(oeste)
   cohete.cambiarVelocidad(1800)
   cohete.sufrirVientoZonda()
+  assert.equals(oeste, cohete.direccion())
   assert.equals(2100, cohete.velocidad())
 }
 
@@ -21,7 +22,7 @@ test "zonda yendo intermedio hacia el oeste" {
   cohete.irHacia(oeste)
   cohete.cambiarVelocidad(800)
   cohete.sufrirVientoZonda()
-  assert.equals(oeste, cohete.velocidad())
+  assert.equals(oeste, cohete.direccion())
   assert.equals(1100, cohete.velocidad())
 }
 
@@ -29,7 +30,7 @@ test "zonda yendo lento hacia el oeste" {
   cohete.irHacia(oeste)
   cohete.cambiarVelocidad(80)
   cohete.sufrirVientoZonda()
-  assert.equals(oeste, cohete.velocidad())
+  assert.equals(oeste, cohete.direccion())
   assert.equals(380, cohete.velocidad())
 }
 
@@ -37,7 +38,7 @@ test "zonda yendo rápido hacia el este" {
   cohete.irHacia(este)
   cohete.cambiarVelocidad(1800)
   cohete.sufrirVientoZonda()
-  assert.equals(este, cohete.velocidad())
+  assert.equals(este, cohete.direccion())
   assert.equals(1500, cohete.velocidad())
 }
 
@@ -45,7 +46,7 @@ test "zonda yendo intermedio hacia el este" {
   cohete.irHacia(este)
   cohete.cambiarVelocidad(800)
   cohete.sufrirVientoZonda()
-  assert.equals(este, cohete.velocidad())
+  assert.equals(este, cohete.direccion())
   assert.equals(700, cohete.velocidad())
 }
 
@@ -53,7 +54,7 @@ test "zonda yendo lento hacia el este" {
   cohete.irHacia(este)
   cohete.cambiarVelocidad(80)
   cohete.sufrirVientoZonda()
-  assert.equals(oeste, cohete.velocidad())
+  assert.equals(oeste, cohete.direccion())
   assert.equals(80, cohete.velocidad())
 }
 
