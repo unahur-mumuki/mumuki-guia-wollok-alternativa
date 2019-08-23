@@ -1,0 +1,43 @@
+test "sacudon con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  tanqueDeAgua.recibirSacudon()
+  assert.equals(197, tanqueDeAgua.nivelDeCarga())
+}
+
+test "sacudon con tanque a 151 litros" {
+  tanqueDeAgua.cargarAgua(151)
+  tanqueDeAgua.recibirSacudon()
+  assert.equals(148, tanqueDeAgua.nivelDeCarga())
+}
+
+test "sacudon con tanque a 150 litros" {
+  tanqueDeAgua.cargarAgua(150)
+  tanqueDeAgua.recibirSacudon()
+  assert.equals(150, tanqueDeAgua.nivelDeCarga())
+}
+
+test "sacudon con poca carga" {
+  tanqueDeAgua.cargarAgua(30)
+  tanqueDeAgua.recibirSacudon()
+  assert.equals(30, tanqueDeAgua.nivelDeCarga())
+}
+
+test "presión canilla con tanque lleno" {
+  tanqueDeAgua.ponerATope()
+  assert.equals(3, tanqueDeAgua.presionCanilla())
+}
+
+test "presión canilla con medio tanque" {
+  tanqueDeAgua.cargarAgua(100)
+  assert.equals(2, tanqueDeAgua.presionCanilla())
+}
+
+test "presión canilla con 80 litros" {
+  tanqueDeAgua.cargarAgua(80)
+  assert.equals(2, tanqueDeAgua.presionCanilla())
+}
+
+test "presión canilla con 20 litros" {
+  tanqueDeAgua.cargarAgua(20)
+  assert.equals(1, tanqueDeAgua.presionCanilla())
+}
