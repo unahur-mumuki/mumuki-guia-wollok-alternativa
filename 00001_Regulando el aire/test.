@@ -1,4 +1,4 @@
-testest "estado si hace mucho calor" {
+test "estado si hace mucho calor" {
   regulador.temperaturaCambia(38)
   assert.equals("enfriando", regulador.estado())
 }
